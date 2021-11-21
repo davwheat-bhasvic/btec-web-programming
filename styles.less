@@ -1,0 +1,134 @@
+:root {
+  --dark-color: #333;
+  --color-primary: #e52434;
+  --color-primary-darker: darken(#e52434, 5%);
+  --color-primary-darkest: darken(#e52434, 10%);
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Comic Sans MS";
+  font-size: 18px;
+}
+
+nav {
+  ul {
+    list-style: none;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    text-align: center;
+
+    background-color: var(--dark-color);
+
+    a {
+      color: #fff;
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 8px;
+    }
+
+    &:hover,
+    &:focus,
+    &:focus-within {
+      background-color: var(--color-primary);
+    }
+  }
+}
+
+article {
+  padding: 16px;
+  max-width: 720px;
+  margin: 0 auto;
+
+  figure {
+    max-width: 80%;
+    display: block;
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    figcaption {
+      width: 100%;
+    }
+  }
+}
+
+.Comments {
+  max-width: 720px;
+  padding: 16px;
+  margin: 0 auto;
+
+  &-newComment {
+    textarea {
+      width: 100%;
+      min-height: 80px;
+      max-height: 100vh;
+      resize: vertical;
+    }
+
+    button {
+      appearance: none;
+      border: none;
+
+      background: var(--color-primary);
+      color: white;
+
+      padding: 8px 16px;
+      border-radius: 6px;
+
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+        background: var(--color-primary-darker);
+      }
+
+      &:active {
+        background: var(--color-primary-darkest);
+      }
+    }
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
+  }
+
+  .Comment {
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+    border: 1px solid var(--dark-color);
+    padding: 16px;
+
+    &::before {
+      display: block;
+      content: "Anonymous user";
+      text-transform: uppercase;
+      font-size: 0.8em;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+  }
+}

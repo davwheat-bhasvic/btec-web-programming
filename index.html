@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Best Website</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav>
+      <ul role="none">
+        <li>
+          <a href="index.html">Markup and web languages</a>
+        </li>
+        <li>
+          <a href="implications.html">Implications</a>
+        </li>
+        <li>
+          <a href="implications.html">Client-side scripting</a>
+        </li>
+        <li>
+          <a href="implications.html">Server-side scripting</a>
+        </li>
+      </ul>
+    </nav>
+
+    <article>
+      <h1>Markup and web languages</h1>
+
+      <p>
+        HTML is the standard markup language for creating web pages. It is used
+        to create web pages that are displayed in a web browser. HTML is the
+        most basic building block of a web page. It defines the content and
+        behavior of a web page. HTML elements are the building blocks of HTML
+        pages. HTML elements tell the browser how the content of the page should
+        be displayed.
+      </p>
+
+      <p>
+        JavaScript is a lightweight, interpreted programming language used to
+        make web pages interactive. It is also used to control the behavior and
+        appearance of a web page. It bears almost no similarities to Java, other
+        than similar syntax.
+      </p>
+
+      <aside>
+        <h2>A trip back to the past</h2>
+
+        <p>
+          The web has used tonnes of different languages for dynamic content
+          over the years, including:
+        </p>
+        <ul>
+          <li>WebAssembly</li>
+          <li>Javascript</li>
+          <li>Visual Basic Scripts (Microsoft ActiveX)</li>
+        </ul>
+      </aside>
+
+      <figure>
+        <img
+          src="https://image.cnbcfm.com/api/v1/image/106828879-1611351385639-bern.jpg?v=1611783695"
+        />
+
+        <figcaption>
+          Bernie Sanders. He has nothing to do with this topic.
+        </figcaption>
+      </figure>
+    </article>
+
+    <div class="Comments">
+      <h2>Comments</h2>
+
+      <div class="Comments-newComment">
+        <textarea minlength="10" placeholder="Type a comment..."></textarea>
+
+        <button id="submit-comment">Submit comment</button>
+      </div>
+
+      <div class="Comments-list"></div>
+    </div>
+
+    <script>
+      const LS_KEY = "btec--markup_comments";
+
+      function getComments() {
+        return JSON.parse(localStorage.getItem(LS_KEY)) || [];
+      }
+
+      function addComment(message) {
+        const comments = getComments();
+        comments.push(message);
+        localStorage.setItem(LS_KEY, JSON.stringify(comments));
+        updateCommentsInDom();
+      }
+
+      function validateComments() {
+        /**
+         * @type {HTMLTextAreaElement}
+         */
+        const textarea = document.querySelector(
+          ".Comments-newComment textarea"
+        );
+
+        if (textarea.value.trim().length < 10) {
+          return false;
+        }
+
+        return textarea.value.trim();
+      }
+
+      function submitCommentHandler(e) {
+        const result = validateComments();
+
+        if (result === false) {
+          return;
+        }
+
+        addComment(result);
+      }
+
+      function updateCommentsInDom() {
+        const comments = getComments();
+        const commentsContainer = document.querySelector(
+          ".Comments .Comments-list"
+        );
+
+        commentsContainer.innerHTML = "";
+
+        comments.forEach((comment) => {
+          const commentElement = document.createElement("div");
+          commentElement.classList.add("Comment");
+          commentElement.innerText = comment;
+
+          commentsContainer.appendChild(commentElement);
+        });
+      }
+
+      document
+        .getElementById("submit-comment")
+        .addEventListener("click", submitCommentHandler);
+
+      updateCommentsInDom();
+    </script>
+  </body>
+</html>
