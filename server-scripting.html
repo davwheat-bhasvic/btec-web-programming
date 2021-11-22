@@ -26,45 +26,57 @@
     </nav>
 
     <article>
-      <h1>Markup and web languages</h1>
+      <h1>Server-side scripting</h1>
 
       <p>
-        HTML is the standard markup language for creating web pages. It is used
-        to create web pages that are displayed in a web browser. HTML is the
-        most basic building block of a web page. It defines the content and
-        behavior of a web page. HTML elements are the building blocks of HTML
-        pages. HTML elements tell the browser how the content of the page should
-        be displayed.
+        Server-side scripting refers to the use of a server to process data sent
+        by a client and to prepare data to send back to a client, specificaly
+        relating to dynamically modifying web traffic.
       </p>
 
       <p>
-        JavaScript is a lightweight, interpreted programming language used to
-        make web pages interactive. It is also used to control the behavior and
-        appearance of a web page. It bears almost no similarities to Java, other
-        than similar syntax.
+        For example, most services which offer a log-in feature do so via
+        backend scripting. The client will send its login credentials to the
+        server, who will then check them. If they are valid, the server returns
+        a session token to the client, which can then be used to access
+        pivileged resources via the web server.
+      </p>
+
+      <p>
+        While a "scripting language" is a very specific type of language, which
+        is always parsed and compiled as it is needed or used, many people
+        incorrectly use this term to refer to any language (such as Java or C#)
+        used on a web server for dynamic content.
       </p>
 
       <aside>
-        <h2>A trip back to the past</h2>
+        <h2>Server-side scripting languages</h2>
 
         <p>
-          The web has used tonnes of different languages for dynamic content
-          over the years, including:
+          In order of popularity, according to the StackOverflow Developer
+          Survey of 2021:
         </p>
+
         <ul>
-          <li>WebAssembly</li>
-          <li>Javascript</li>
-          <li>Visual Basic Scripts (Microsoft ActiveX)</li>
+          <li>Python</li>
+          <li>Node.js (JavaScript)</li>
+          <li>PHP</li>
         </ul>
+
+        <p>
+          Note: popularity does not specifically refer to their popularity as
+          web server scripting languages, just their overall popularity.
+        </p>
       </aside>
 
       <figure>
         <img
-          src="https://image.cnbcfm.com/api/v1/image/106828879-1611351385639-bern.jpg?v=1611783695"
+          src="https://smartcdn.prod.postmedia.digital/nationalpost/wp-content/uploads/2018/10/ezgif-com-video-to-gif-9.gif"
         />
 
         <figcaption>
-          Bernie Sanders. He has nothing to do with this topic.
+          Leaked footage of Theresa May enjoying The V8 Engine's fast
+          implementations of JavaScript built-ins.
         </figcaption>
       </figure>
     </article>
@@ -110,7 +122,7 @@
     </div>
 
     <script>
-      const LS_KEY = "btec--markup_comments";
+      const LS_KEY = "btec--client-scripts_comments";
 
       /**
        * @type {HTMLTextAreaElement}

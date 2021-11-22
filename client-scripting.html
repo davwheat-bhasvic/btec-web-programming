@@ -26,45 +26,52 @@
     </nav>
 
     <article>
-      <h1>Markup and web languages</h1>
+      <h1>Client-side scripting</h1>
 
       <p>
-        HTML is the standard markup language for creating web pages. It is used
-        to create web pages that are displayed in a web browser. HTML is the
-        most basic building block of a web page. It defines the content and
-        behavior of a web page. HTML elements are the building blocks of HTML
-        pages. HTML elements tell the browser how the content of the page should
-        be displayed.
+        Client-side scripting refers to the use of JavaScript on a website. This
+        can be through manipulating content, or responding to user interaction.
       </p>
 
       <p>
-        JavaScript is a lightweight, interpreted programming language used to
-        make web pages interactive. It is also used to control the behavior and
-        appearance of a web page. It bears almost no similarities to Java, other
-        than similar syntax.
+        JavaScript is run through a JavaScript engine, which combines native
+        code, for processes such as sorting an array, alongside JavaScript code.
+        This allows JavaScript to be surprisingly performant.
+      </p>
+
+      <p>
+        Chromium (and Google Chrome) uses the V8 engine, which is written in C++
+        and can run JavaScript and WebAssembly code. This is open source, and
+        also used by React Native for hybrid mobile app development.
       </p>
 
       <aside>
-        <h2>A trip back to the past</h2>
+        <h2>JavaScript engines</h2>
 
-        <p>
-          The web has used tonnes of different languages for dynamic content
-          over the years, including:
-        </p>
         <ul>
-          <li>WebAssembly</li>
-          <li>Javascript</li>
-          <li>Visual Basic Scripts (Microsoft ActiveX)</li>
+          <li>
+            JavaScript engines are just-in-time (JIT) compilers, which convert
+            JavaScript to native machine code when needed.
+          </li>
+          <li>
+            Different browsers and software use different JavaScript engines.
+          </li>
+          <li>
+            Engines are normally written in programming languages (e.g. C++)
+            which can easily be compiled ahead of time, and be supported across
+            multiple platforms.
+          </li>
         </ul>
       </aside>
 
       <figure>
         <img
-          src="https://image.cnbcfm.com/api/v1/image/106828879-1611351385639-bern.jpg?v=1611783695"
+          src="https://smartcdn.prod.postmedia.digital/nationalpost/wp-content/uploads/2018/10/ezgif-com-video-to-gif-9.gif"
         />
 
         <figcaption>
-          Bernie Sanders. He has nothing to do with this topic.
+          Leaked footage of Theresa May enjoying The V8 Engine's fast
+          implementations of JavaScript built-ins.
         </figcaption>
       </figure>
     </article>
@@ -110,7 +117,7 @@
     </div>
 
     <script>
-      const LS_KEY = "btec--markup_comments";
+      const LS_KEY = "btec--client-scripts_comments";
 
       /**
        * @type {HTMLTextAreaElement}
